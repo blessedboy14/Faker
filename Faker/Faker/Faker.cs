@@ -32,6 +32,26 @@ namespace Faker
             return false;
         }
 
+        private void LoadPlugins()
+        {
+            string path = Path.GetDirectoryName(
+                Path.GetDirectoryName(
+                    Path.GetDirectoryName(
+                        Path.GetDirectoryName(AppContext.BaseDirectory)))) + "\\Plugins\\";
+            foreach (var f in Directory.GetFiles(path))
+            {
+                var DLL = Assembly.LoadFrom(f);
+                
+                foreach (Type t in DLL.GetTypes())
+                {
+                    if (isBasicGenerator(t, typeof(BaseGenerator<>)))
+                    {
+                        gens.Add(t.BaseType.GetGenericArguments()[0], (IGenerator)Activator.CreateInstance(t));
+                    }
+                }
+            }
+        }
+
         public Faker() 
         {
             usedTypes = new Stack<Type>();
@@ -41,14 +61,14 @@ namespace Faker
             {
                 if (isBasicGenerator(t, typeof(BaseGenerator<>)))
                 {
-
                     if (t.Namespace == "Generators" && t.BaseType.IsGenericType)
                     {
                         gens.Add(t.BaseType.GetGenericArguments()[0], (IGenerator)Activator.CreateInstance(t));
                     }
                 }
             }
-            int b = 0;
+            LoadPlugins();
+            int i = 0;
         }
 
         public T Create<T>()
