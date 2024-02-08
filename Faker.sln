@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker", "Faker\Faker.csproj", "{A7543B97-EDB2-439F-A9B5-3D881280C70C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faker", "Faker\Faker.csproj", "{A7543B97-EDB2-439F-A9B5-3D881280C70C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateTimeGenerator", "Faker\DateTimeGenerator\DateTimeGenerator.csproj", "{54CB9EA6-F796-4EB5-BBEB-F185DA92234C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrGenerator", "Faker\StrGenerator\StrGenerator.csproj", "{8B1D4C3F-43FD-4C53-B8BA-C596656454CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{A7543B97-EDB2-439F-A9B5-3D881280C70C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7543B97-EDB2-439F-A9B5-3D881280C70C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7543B97-EDB2-439F-A9B5-3D881280C70C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54CB9EA6-F796-4EB5-BBEB-F185DA92234C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54CB9EA6-F796-4EB5-BBEB-F185DA92234C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54CB9EA6-F796-4EB5-BBEB-F185DA92234C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54CB9EA6-F796-4EB5-BBEB-F185DA92234C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1D4C3F-43FD-4C53-B8BA-C596656454CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1D4C3F-43FD-4C53-B8BA-C596656454CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1D4C3F-43FD-4C53-B8BA-C596656454CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1D4C3F-43FD-4C53-B8BA-C596656454CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
