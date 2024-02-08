@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Faker
+namespace Generators
 {
-    public interface IFaker
+    public interface IGenerator
     {
-        T Create<T>();
+        object Generate(GeneratorInfo info);
     }
 }

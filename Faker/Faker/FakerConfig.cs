@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Faker.Faker
+namespace Faker
 {
-    internal class FakerConfig
+    public class FakerConfig()
     {
+
     }
 }
