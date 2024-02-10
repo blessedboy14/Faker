@@ -36,7 +36,7 @@ namespace Faker
                 
                 foreach (Type t in DLL.GetTypes())
                 {
-                    if (isBasicGenerator(t, typeof(BaseGenerator<>)))
+                    if (isBasicGenerator(t, typeof(BaseGenerator<>)) && t.BaseType != null)
                     {
                         gens.Add(t.BaseType.GetGenericArguments()[0], (IGenerator)Activator.CreateInstance(t));
                     }
@@ -53,12 +53,13 @@ namespace Faker
             {
                 if (isBasicGenerator(t, typeof(BaseGenerator<>)))
                 {
-                    if (t.Namespace == "Generators" && t.BaseType.IsGenericType)
+                    if (t.Namespace == "Generators" && t.BaseType != null && t.BaseType.IsGenericType)
                     {
                         gens.Add(t.BaseType.GetGenericArguments()[0], (IGenerator)Activator.CreateInstance(t));
                     }
                 }
             }
+            gens.Add(typeof(List<>), new ListGenerator());
             LoadPlugins();
         }
 
@@ -80,7 +81,7 @@ namespace Faker
             return (T)CreateDTO(typeof(T));
         }
 
-        private object CreateDTO(Type type)
+        public object CreateDTO(Type type)
         {
             if (usedTypes.Where(t => t == type).Count() >= 2)
             {
@@ -179,7 +180,7 @@ namespace Faker
             ConstructorInfo[] constructors = type.GetConstructors();
             IEnumerable<ConstructorInfo> constr = constructors.OrderByDescending(c => c.GetParameters().Length);
 
-            object dtoObj = null;
+            object? dtoObj = null;
 
             foreach (ConstructorInfo constructor in constr)
             {
@@ -201,7 +202,7 @@ namespace Faker
                 {
                     dtoObj = constructor.Invoke(constrInput);
                     break;
-                } catch (Exception ex){
+                } catch (Exception){
                     continue;
                 }
             }
