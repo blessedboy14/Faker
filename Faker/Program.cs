@@ -1,7 +1,7 @@
 ﻿using Faker;
 public class Some
 {
-    public static void Main(String[] args)
+    public static void teain(String[] args)
     {
         IFaker f = new Faker.Faker();
         Foo example = f.Create<Foo>();
@@ -13,7 +13,6 @@ public class Foo
 {
     public Bot bot { get; set; }
     public byte t;
-    private int some_unfilled;
     public int resticted { get; }
     public string some_str;
     public int ewkere;
@@ -33,8 +32,4 @@ public class Bot
     public long some_val;
     public char eueu;
     public List<int> ints;
-    private Bot()
-    {
-        int t = 0;
-    }
 }

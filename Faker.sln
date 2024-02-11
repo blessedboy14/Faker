@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faker", "Faker\Faker.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateTimeGenerator", "Faker\DateTimeGenerator\DateTimeGenerator.csproj", "{54CB9EA6-F796-4EB5-BBEB-F185DA92234C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrGenerator", "Faker\StrGenerator\StrGenerator.csproj", "{8B1D4C3F-43FD-4C53-B8BA-C596656454CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrGenerator", "Faker\StrGenerator\StrGenerator.csproj", "{8B1D4C3F-43FD-4C53-B8BA-C596656454CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
